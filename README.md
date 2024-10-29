@@ -88,5 +88,3 @@ If you'd like to contribute to this project:
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-
-Copy this into your `README.md` file, and it will be good to go!
