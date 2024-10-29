@@ -47,7 +47,7 @@ public class SearchProduct {
         } else {
             System.out.println("failed");
         }
-        System.out.println(driver.getTitle());
+        System.out.println(ProductName);
         driver.close();
 
     }
