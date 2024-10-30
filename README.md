@@ -1,6 +1,3 @@
-Here's the content in a format ready for copying directly into a `README.md` file:
-
-```markdown
 # GroceryMart Automation Project
 
 This repository contains the automated testing framework for the **GroceryMart** web application, developed using **Selenium**, **Java**, and **Cucumber** for behavior-driven development (BDD). This framework enables end-to-end testing to validate core functionalities and ensure a smooth user experience.
