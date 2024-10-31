@@ -48,6 +48,7 @@ public class SearchProduct {
             System.out.println("failed");
         }
         System.out.println("Page Title is : " + driver.getTitle());
+        System.out.println("Product Name is : " + ProductName);
         driver.close();
 
     }
