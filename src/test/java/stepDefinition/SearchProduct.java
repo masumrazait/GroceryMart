@@ -53,7 +53,7 @@ public class SearchProduct {
 
     @Then("validate product name in offers page match with landing page")
     public void validate_product_name_in_offers_page_match_with_landing_page() {
-        Assert.assertEquals(landingPageProductName, offerPageProductName);
+        Assert.assertEquals(offerPageProductName, landingPageProductName);
         driver.quit();
     }
 }
