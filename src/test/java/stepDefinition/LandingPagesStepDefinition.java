@@ -51,7 +51,8 @@ public class SearchProduct {
     }
 
     @Then("validate product name in offers page match with landing page")
-    public void validate_product_name_in_offers_page_match_with_landing_page() {
+    public void validate_product_name_in_offers_page_match_with_landing_page() throws InterruptedException {
+        Thread.sleep(3000);
         if (landingPageProductName.equals(offerPageProductName)) {
             System.out.println("Landing page product is matching to the offer page");
         } else {
