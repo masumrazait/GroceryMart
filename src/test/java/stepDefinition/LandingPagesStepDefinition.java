@@ -30,7 +30,7 @@ public class LandingPagesStepDefinition {
     public void user_searched_with_shortname_and_extracted_actual_name_of_product(String ShortName) throws InterruptedException {
         testContextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(ShortName);
         Thread.sleep(3000);
-        testContextSetup.landingPageProductName = testContextSetup.driver.findElement(By.cssSelector("h4.product-name")).getText().split("-")[0].trim();
+        landingPageProductName = testContextSetup.driver.findElement(By.cssSelector("h4.product-name")).getText().split("-")[0].trim();
         System.out.println(landingPageProductName + " is extracted from home page");
     }
 }
