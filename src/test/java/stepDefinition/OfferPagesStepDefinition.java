@@ -1,8 +1,9 @@
 package stepDefinition;
 
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
-import pageObject.OfferPage;
+import pageObjects.LandingPage;
+import pageObjects.OfferPage;
+import pageObjects.PageObjectManager;
 import src.test.utils.TestContextSetup;
 
 import java.util.Iterator;
@@ -12,6 +13,7 @@ public class OfferPagesStepDefinition {
 
     public String offerPageProductName;
     TestContextSetup testContextSetup;
+    PageObjectManager pageObjectManager;
 
     public OfferPagesStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
@@ -28,7 +30,8 @@ public class OfferPagesStepDefinition {
     }
 
     public void switchToOffersPage() throws InterruptedException {
-        testContextSetup.driver.findElement(By.linkText("Top Deals")).click();
+        LandingPage landingPage = testContextSetup.pageObjectManager.getLandingPage();
+        landingPage.selectTopDeals();
         Set<String> s1 = testContextSetup.driver.getWindowHandles();
         Iterator<String> i1 = s1.iterator();
         String parentWindow = i1.next();

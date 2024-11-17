@@ -3,7 +3,8 @@ package stepDefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pageObject.LandingPage;
+import pageObjects.LandingPage;
+import pageObjects.PageObjectManager;
 import src.test.utils.TestContextSetup;
 
 import java.util.concurrent.TimeUnit;
@@ -13,6 +14,7 @@ public class LandingPagesStepDefinition {
     public String landingPageProductName;
     public String offerPageProductName;
     TestContextSetup testContextSetup;
+    PageObjectManager pageObjectManager;
 
     public LandingPagesStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
