@@ -3,7 +3,7 @@ package stepDefinition;
 import io.cucumber.java.en.Then;
 import pageObjects.LandingPage;
 import pageObjects.OfferPage;
-import pageObjects.PageObjectManager;
+import pageObjects.PageObjectsManager;
 import src.test.utils.TestContextSetup;
 
 import java.util.Iterator;
@@ -13,7 +13,7 @@ public class OfferPagesStepDefinition {
 
     public String offerPageProductName;
     TestContextSetup testContextSetup;
-    PageObjectManager pageObjectManager;
+    PageObjectsManager pageObjectsManager;
 
     public OfferPagesStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
@@ -30,7 +30,7 @@ public class OfferPagesStepDefinition {
     }
 
     public void switchToOffersPage() throws InterruptedException {
-        LandingPage landingPage = testContextSetup.pageObjectManager.getLandingPage();
+        LandingPage landingPage = testContextSetup.pageObjectsManager.getLandingPage();
         landingPage.selectTopDeals();
         Set<String> s1 = testContextSetup.driver.getWindowHandles();
         Iterator<String> i1 = s1.iterator();

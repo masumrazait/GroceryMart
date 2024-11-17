@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.LandingPage;
-import pageObjects.PageObjectManager;
+import pageObjects.PageObjectsManager;
 import src.test.utils.TestContextSetup;
 
 import java.util.concurrent.TimeUnit;
@@ -14,7 +14,7 @@ public class LandingPagesStepDefinition {
     public String landingPageProductName;
     public String offerPageProductName;
     TestContextSetup testContextSetup;
-    PageObjectManager pageObjectManager;
+    PageObjectsManager pageObjectsManager;
 
     public LandingPagesStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;

@@ -10,8 +10,8 @@ public class OfferPage {
         this.driver = driver;
     }
 
-    private By search = By.xpath("//input[@type='search']");
-    private By productName = By.xpath("//table[@class='table table-bordered']/tbody/tr[1]/td");
+    private final By search = By.xpath("//input[@type='search']");
+    private final By productName = By.xpath("//table[@class='table table-bordered']/tbody/tr[1]/td");
 
 
     public void searchItem(String name) {
