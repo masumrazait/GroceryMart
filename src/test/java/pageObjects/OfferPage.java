@@ -7,10 +7,11 @@ public class OfferPage {
     public WebDriver driver;
 
     public OfferPage(WebDriver driver) {
-        this.driver=driver;
+        this.driver = driver;
     }
-    By search = By.xpath("//input[@type='search']");
-    By productName = By.xpath("//table[@class='table table-bordered']/tbody/tr[1]/td");
+
+    private By search = By.xpath("//input[@type='search']");
+    private By productName = By.xpath("//table[@class='table table-bordered']/tbody/tr[1]/td");
 
 
     public void searchItem(String name) {
