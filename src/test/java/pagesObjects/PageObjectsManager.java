@@ -12,12 +12,12 @@ public class PageObjectsManager {
     }
 
     public LandingPage getLandingPage() {
-        LandingPage landingPage = new LandingPage(driver);
+        landingPage = new LandingPage(driver);
         return landingPage;
     }
 
     public OfferPage getOfferPage() {
-        OfferPage offerPage = new OfferPage(driver);
+        offerPage = new OfferPage(driver);
         return offerPage;
     }
 }

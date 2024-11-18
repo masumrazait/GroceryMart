@@ -8,10 +8,12 @@ public class TestContextSetup {
     public String landingPageProductName;
     public PageObjectsManager pageObjectsManager;
     public TestBase testBase;
+    public GenericUtils genericUtils;
 
     public TestContextSetup() {
         testBase = new TestBase();
         pageObjectsManager = new PageObjectsManager(testBase.WebDriverManager());
+        genericUtils = new GenericUtils(testBase.WebDriverManager());
     }
 
 }

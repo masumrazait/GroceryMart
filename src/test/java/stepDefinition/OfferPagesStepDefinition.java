@@ -3,15 +3,13 @@ package stepDefinition;
 import io.cucumber.java.en.Then;
 import pagesObjects.LandingPage;
 import pagesObjects.OfferPage;
+import pagesObjects.PageObjectsManager;
 import utils.TestContextSetup;
 
-import java.util.Iterator;
-import java.util.Set;
-
 public class OfferPagesStepDefinition {
-
     public String offerPageProductName;
     TestContextSetup testContextSetup;
+    PageObjectsManager pageObjectsManager;
 
     public OfferPagesStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
@@ -21,7 +19,7 @@ public class OfferPagesStepDefinition {
     public void user_searched_for_shortname_in_offers_page(String ShortName) throws InterruptedException {
         switchToOffersPage();
         Thread.sleep(3000);
-        OfferPage offerPage = new OfferPage(testContextSetup.driver);
+        OfferPage offerPage = testContextSetup.pageObjectsManager.getOfferPage();
         offerPage.searchItem(ShortName);
         offerPageProductName = offerPage.getProductName();
         System.out.println(offerPageProductName + " is extracted from offers page");
@@ -30,11 +28,7 @@ public class OfferPagesStepDefinition {
     public void switchToOffersPage() throws InterruptedException {
         LandingPage landingPage = testContextSetup.pageObjectsManager.getLandingPage();
         landingPage.selectTopDeals();
-        Set<String> s1 = testContextSetup.driver.getWindowHandles();
-        Iterator<String> i1 = s1.iterator();
-        String parentWindow = i1.next();
-        String childWindow = i1.next();
-        testContextSetup.driver.switchTo().window(childWindow);
+        testContextSetup.genericUtils.SwitchWindowToChild();
     }
 
     @Then("validate product name in offers page match with landing page")
