@@ -3,9 +3,8 @@ package stepDefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pageObjects.LandingPage;
-import pageObjects.PageObjectsManager;
-import src.test.utils.TestContextSetup;
+import pagesObjects.LandingPage;
+import utils.TestContextSetup;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +13,6 @@ public class LandingPagesStepDefinition {
     public String landingPageProductName;
     public String offerPageProductName;
     TestContextSetup testContextSetup;
-    PageObjectsManager pageObjectsManager;
 
     public LandingPagesStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
@@ -31,7 +29,7 @@ public class LandingPagesStepDefinition {
 
     @When("user searched with shortname {string} and extracted actual name of product")
     public void user_searched_with_shortname_and_extracted_actual_name_of_product(String ShortName) throws InterruptedException {
-        LandingPage landingPage = new LandingPage(testContextSetup.driver);
+        LandingPage landingPage = testContextSetup.pageObjectsManager.getLandingPage();
         landingPage.searchItem(ShortName);
         Thread.sleep(3000);
         testContextSetup.landingPageProductName = landingPage.getProductName().split("-")[0].trim();

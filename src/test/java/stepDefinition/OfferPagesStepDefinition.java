@@ -1,10 +1,9 @@
 package stepDefinition;
 
 import io.cucumber.java.en.Then;
-import pageObjects.LandingPage;
-import pageObjects.OfferPage;
-import pageObjects.PageObjectsManager;
-import src.test.utils.TestContextSetup;
+import pagesObjects.LandingPage;
+import pagesObjects.OfferPage;
+import utils.TestContextSetup;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -13,7 +12,6 @@ public class OfferPagesStepDefinition {
 
     public String offerPageProductName;
     TestContextSetup testContextSetup;
-    PageObjectsManager pageObjectsManager;
 
     public OfferPagesStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
