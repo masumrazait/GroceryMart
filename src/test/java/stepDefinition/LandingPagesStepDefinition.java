@@ -2,11 +2,8 @@ package stepDefinition;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pagesObjects.LandingPage;
 import utils.TestContextSetup;
-
-import java.util.concurrent.TimeUnit;
 
 public class LandingPagesStepDefinition {
 
