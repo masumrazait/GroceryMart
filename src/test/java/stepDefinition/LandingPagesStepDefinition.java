@@ -3,7 +3,7 @@ package stepDefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pagesObjects.LandingPage;
+import pageObjects.LandingPage;
 import utils.TestContextSetup;
 
 public class LandingPagesStepDefinition {
@@ -27,6 +27,6 @@ public class LandingPagesStepDefinition {
         landingPage.searchItem(ShortName);
         Thread.sleep(3000);
         testContextSetup.landingPageProductName = landingPage.getProductName().split("-")[0].trim();
-        System.out.println(landingPageProductName + " is extracted from home page");
+        System.out.println(testContextSetup.landingPageProductName + " has been extracted from the homePage product.");
     }
 }

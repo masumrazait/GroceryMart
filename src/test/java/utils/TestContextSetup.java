@@ -1,7 +1,7 @@
 package utils;
 
 import org.openqa.selenium.WebDriver;
-import pagesObjects.PageObjectsManager;
+import pageObjects.PageObjectsManager;
 
 import java.io.IOException;
 
@@ -17,5 +17,4 @@ public class TestContextSetup {
         pageObjectsManager = new PageObjectsManager(testBase.WebDriverManager());
         genericUtils = new GenericUtils(testBase.WebDriverManager());
     }
-
 }
