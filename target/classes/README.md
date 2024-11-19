@@ -21,25 +21,46 @@ This repository contains the automated testing framework for the **GroceryMart**
 ## Project Structure
 ```plaintext
 GroceryMart-Automation
+├── Report
+│   ├── cucumber-reports.html
+│   └── cucumber-reports.json
 ├── src
 │   ├── main
 │   │   └── java
 │   │       └── utilities          # Helper classes (e.g., WebDriver setup, configuration)
 │   └── test
 │       ├── java
-│       │   ├── stepDefinitions     # Step definition classes for Cucumber
-│       │   ├── runners             # Cucumber test runners
+│       │   ├── features            # Cucumber feature files
+│       │   │   └── searchProduct.feature
 │       │   ├── pageObjects         # Page Object Model (POM) classes
-│       │   └── features            # Cucumber feature files
+│       │   │   ├── LandingPage.java
+│       │   │   ├── OfferPage.java
+│       │   │   └── PageObjectsManager.java
+│       │   ├── runners             # Cucumber test runners
+│       │   │   └── TestRunner.java
+│       │   ├── stepDefinitions     # Step definition classes for Cucumber
+│       │   │   ├── Given.java
+│       │   │   ├── Hooks.java
+│       │   │   ├── LandingPagesStepDefinition.java
+│       │   │   └── OfferPagesStepDefinition.java
+│       │   ├── utils               # Utility classes
+│       │   │   ├── GenericUtils.java
+│       │   │   ├── TestBase.java
+│       │   │   └── TestContextSetup.java
 │       └── resources               # Additional resources (e.g., data files, config)
+│           ├── chromedriver.exe
+│           └── global.properties
+├── target
+├── untitled
 ├── pom.xml                         # Maven configuration file
 └── README.md                       # Project documentation
+
 ```
 
 ## Getting Started
 
 ### Prerequisites
-- **Java** (version 8 or higher)
+- **Java** (version 11 or higher)
 - **Maven** (latest version)
 - **ChromeDriver** or **GeckoDriver** depending on your browser of choice
 
@@ -73,7 +94,7 @@ mvn test -Dcucumber.options="--tags @tagName"
 Replace `@tagName` with the desired tag from the feature files.
 
 ## Test Reporting
-Upon completion, test reports are generated in `target/cucumber-reports`. Open the `index.html` in a browser to view detailed reports of test execution.
+Upon completion, test reports are generated in `Report/cucumber-reports`. Open the `index.html` in a browser to view detailed reports of test execution.
 
 ## Contributing
 If you'd like to contribute to this project:
