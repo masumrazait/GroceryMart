@@ -18,7 +18,10 @@ This repository contains the automated testing framework for the **GroceryMart**
 - **JUnit** - Test runner for executing the tests
 - **Maven** - Dependency management and build tool
 
-## Project Structure
+# **GroceryMart-Automation**
+
+## **Project Structure**
+
 ```plaintext
 **GroceryMart-Automation**
 ├── **Report**
@@ -54,7 +57,6 @@ This repository contains the automated testing framework for the **GroceryMart**
 ├── **untitled**
 ├── *pom.xml*                         # Maven configuration file
 └── *README.md*                       # Project documentation
-
 
 ```
 
