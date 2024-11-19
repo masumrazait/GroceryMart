@@ -18,45 +18,42 @@ This repository contains the automated testing framework for the **GroceryMart**
 - **JUnit** - Test runner for executing the tests
 - **Maven** - Dependency management and build tool
 
-# **GroceryMart-Automation**
-
-## **Project Structure**
-
+## Project Structure
 ```plaintext
-**GroceryMart-Automation**
-├── **Report**
-│   ├── *cucumber-reports.html*
-│   └── *cucumber-reports.json*
-├── **src**
-│   ├── **main**
-│   │   └── **java**
-│   │       └── *utilities*          # Helper classes (e.g., WebDriver setup, configuration)
-│   └── **test**
-│       ├── **java**
-│       │   ├── *features*            # Cucumber feature files
-│       │   │   └── *searchProduct.feature*
-│       │   ├── *pageObjects*         # Page Object Model (POM) classes
-│       │   │   ├── *LandingPage.java*
-│       │   │   ├── *OfferPage.java*
-│       │   │   └── *PageObjectsManager.java*
-│       │   ├── *runners*             # Cucumber test runners
-│       │   │   └── *TestRunner.java*
-│       │   ├── *stepDefinitions*     # Step definition classes for Cucumber
-│       │   │   ├── *Given.java*
-│       │   │   ├── *Hooks.java*
-│       │   │   ├── *LandingPagesStepDefinition.java*
-│       │   │   └── *OfferPagesStepDefinition.java*
-│       │   ├── *utils*               # Utility classes
-│       │   │   ├── *GenericUtils.java*
-│       │   │   ├── *TestBase.java*
-│       │   │   └── *TestContextSetup.java*
-│       └── **resources**               # Additional resources (e.g., data files, config)
-│           ├── *chromedriver.exe*
-│           └── *global.properties*
-├── **target**
-├── **untitled**
-├── *pom.xml*                         # Maven configuration file
-└── *README.md*                       # Project documentation
+GroceryMart-Automation
+├── Report
+│   ├── cucumber-reports.html
+│   └── cucumber-reports.json
+├── src
+│   ├── main
+│   │   └── java
+│   │       └── utilities          # Helper classes (e.g., WebDriver setup, configuration)
+│   └── test
+│       ├── java
+│       │   ├── features            # Cucumber feature files
+│       │   │   └── searchProduct.feature
+│       │   ├── pageObjects         # Page Object Model (POM) classes
+│       │   │   ├── LandingPage.java
+│       │   │   ├── OfferPage.java
+│       │   │   └── PageObjectsManager.java
+│       │   ├── runners             # Cucumber test runners
+│       │   │   └── TestRunner.java
+│       │   ├── stepDefinitions     # Step definition classes for Cucumber
+│       │   │   ├── Given.java
+│       │   │   ├── Hooks.java
+│       │   │   ├── LandingPagesStepDefinition.java
+│       │   │   └── OfferPagesStepDefinition.java
+│       │   ├── utils               # Utility classes
+│       │   │   ├── GenericUtils.java
+│       │   │   ├── TestBase.java
+│       │   │   └── TestContextSetup.java
+│       └── resources               # Additional resources (e.g., data files, config)
+│           ├── chromedriver.exe
+│           └── global.properties
+├── target
+├── untitled
+├── pom.xml                         # Maven configuration file
+└── README.md                       # Project documentation
 
 ```
 
