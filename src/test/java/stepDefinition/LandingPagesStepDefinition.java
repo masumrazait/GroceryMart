@@ -21,7 +21,7 @@ public class LandingPagesStepDefinition {
 
     }
 
-    @When("user searched with shortname {string} and extracted actual name of product")
+    @When("^user searched with shortname (.+) and extracted actual name of product$")
     public void user_searched_with_shortname_and_extracted_actual_name_of_product(String ShortName) throws InterruptedException {
         LandingPage landingPage = testContextSetup.pageObjectsManager.getLandingPage();
         landingPage.searchItem(ShortName);
