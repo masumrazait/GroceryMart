@@ -15,7 +15,7 @@ This repository contains the automated testing framework for the **GroceryMart**
 - **Java** - Programming language for building test scripts
 - **Selenium WebDriver** - Browser automation tool
 - **Cucumber** - BDD framework to define test scenarios in plain English
-- **JUnit** - Test runner for executing the tests
+- **TestNG** - Test runner for executing the tests
 - **Maven** - Dependency management and build tool
 
 ## Project Structure
