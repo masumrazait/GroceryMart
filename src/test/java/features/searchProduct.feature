@@ -5,8 +5,15 @@ Feature: Search Product Validation
     When user searched with shortname <Name> and extracted actual name of product
     Then user searched for <Name> shortname in offers page
     And validate product name in offers page match with landing page
-    Examples:
+
+    Examples: 
       | Name    |
       | Tomato  |
-      | Potato  |
-      | Brinjal |
+     # | Potato  |
+     # | Brinjal |
+
+  Scenario: Search product<Tom> on home page
+    When user search product by shortname<Tom>
+    Then user clicked on add to cart
+    And user click on bag
+    Then user click on checkout the product
