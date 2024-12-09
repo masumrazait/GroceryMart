@@ -6,6 +6,7 @@ public class PageObjectsManager {
     public LandingPage landingPage;
     public OfferPage offerPage;
     public WebDriver driver;
+    public AddToCartPage addtoCart;
 
     public PageObjectsManager(WebDriver driver) {
         this.driver = driver;
@@ -20,4 +21,10 @@ public class PageObjectsManager {
         offerPage = new OfferPage(driver);
         return offerPage;
     }
+    
+    public AddToCartPage AddToCart() {
+    	addtoCart = new AddToCartPage(driver);
+        return addtoCart;
+    }
 }
+

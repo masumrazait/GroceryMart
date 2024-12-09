@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.AddToCartPage;
 import utils.TestContextSetup;
 
 public class AddToCartStepDefinition {
@@ -15,7 +16,10 @@ public class AddToCartStepDefinition {
     }
 	
 	@When("user search product by shortname<Tom>")
-	public void user_search_product_by_shortname_tom(String ProductName) {
+	public void user_search_product_by_shortname_tom(String ProductName) throws InterruptedException {
+		AddToCartPage addToCartPage = testContextSetup.pageObjectsManager.AddToCart();
+		addToCartPage.searchItem(ProductName);
+	        Thread.sleep(3000);
 		
 		
 	}
