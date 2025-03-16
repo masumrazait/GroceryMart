@@ -5,6 +5,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pageObjects.LandingPage;
 import utils.TestContextSetup;
 
 public class LandingPageStepDefinition {
@@ -28,9 +29,10 @@ public class LandingPageStepDefinition {
 
     @When("user searched with Shortname {string} and extracted actual name of product")
     public void user_searched_with_shortname_and_extracted_actual_name_of_product(String shortname) throws InterruptedException {
-        testContextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(shortname);
+        LandingPage landingPage = new LandingPage(testContextSetup.driver);
+        landingPage.SearchItem(shortname);
         Thread.sleep(3000);
-        testContextSetup.landingPageProductName = testContextSetup.driver.findElement(By.cssSelector("h4.product-name")).getText().split("-")[0].trim();
+        testContextSetup.landingPageProductName = landingPage.getProductName().split("-")[0].trim();
         System.out.println(landingPageProductName + " is extracted from the Home page");
     }
 
