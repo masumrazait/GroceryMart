@@ -11,7 +11,7 @@ public class OffersPage {
     }
 
     By search = By.xpath("//input[@type='search']");
-    By productName = By.cssSelector("h4.product-name");
+    By productName = By.xpath("//table[@class='table table-bordered']//tbody/tr[1]/td[1]");
 
     public void SearchItem(String name) {
         driver.findElement(search).sendKeys(name);

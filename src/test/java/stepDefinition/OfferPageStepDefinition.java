@@ -3,6 +3,8 @@ package stepDefinition;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import pageObjects.LandingPage;
+import pageObjects.OffersPage;
 import utils.TestContextSetup;
 
 import java.util.Iterator;
@@ -17,17 +19,18 @@ public class OfferPageStepDefinition {
     }
 
     @Then("user searched for {string} shortname in offers page")
-    public void user_searched_for_same_shortname_in_offers_page(String shortname) throws InterruptedException {
+    public void user_searched_for_same_shortname_in_offers_page(String shortname) {
         switchToOffersPage();
-        testContextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(shortname);
-        Thread.sleep(3000);
-        offerPageProductName = testContextSetup.driver.findElement(By.xpath("//table[@class='table table-bordered']//tbody/tr[1]/td[1]")).getText();
+        OffersPage offersPage = new OffersPage(testContextSetup.driver);
+        offersPage.SearchItem(shortname);
+        offerPageProductName = offersPage.getProductName();
         System.out.println(offerPageProductName + " is extracted from the Offers page");
     }
 
     public void switchToOffersPage() {
         //if (testContextSetup.driver.getCurrentUrl().equalsIgnoreCase("https://rahulshettyacademy.com/seleniumPractise/#/offers"))
-        testContextSetup.driver.findElement(By.linkText("Top Deals")).click();
+        LandingPage landingPage = new LandingPage(testContextSetup.driver);
+        landingPage.selectTopDealsPage();
         Set<String> windows = testContextSetup.driver.getWindowHandles();
         Iterator<String> it = windows.iterator();
         String parentWindow = it.next();
