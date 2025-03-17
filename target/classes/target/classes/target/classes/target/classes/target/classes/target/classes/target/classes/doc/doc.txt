@@ -1,7 +1,0 @@
-//If you and any data from the feater file, you can use the following code
-When User enters AAA and 2222
-then you need to write regular expression in the step definition file
-@When("^User enters (.+) and (.+)$")
-public void user_enters_and(String username, String password) {
-    System.out.println(username);
-    System.out.println
