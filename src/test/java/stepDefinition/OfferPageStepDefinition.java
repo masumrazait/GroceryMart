@@ -1,10 +1,10 @@
 package stepDefinition;
 
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import pageObjects.LandingPage;
 import pageObjects.OffersPage;
+import pageObjects.PageObjectManager;
 import utils.TestContextSetup;
 
 import java.util.Iterator;
@@ -12,6 +12,7 @@ import java.util.Set;
 
 public class OfferPageStepDefinition {
     TestContextSetup testContextSetup;
+    PageObjectManager pageObjectManager;
     public String offerPageProductName;
 
     public OfferPageStepDefinition(TestContextSetup testContextSetup) {
@@ -29,7 +30,8 @@ public class OfferPageStepDefinition {
 
     public void switchToOffersPage() {
         //if (testContextSetup.driver.getCurrentUrl().equalsIgnoreCase("https://rahulshettyacademy.com/seleniumPractise/#/offers"))
-        LandingPage landingPage = new LandingPage(testContextSetup.driver);
+        //pageObjectManager = new PageObjectManager(testContextSetup.driver);
+        LandingPage landingPage = testContextSetup.pageObjectManager.getLandingPage();
         landingPage.selectTopDealsPage();
         Set<String> windows = testContextSetup.driver.getWindowHandles();
         Iterator<String> it = windows.iterator();
