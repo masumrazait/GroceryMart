@@ -27,6 +27,7 @@ public class LandingPageStepDefinition {
         LandingPage landingPage = testContextSetup.pageObjectManager.getLandingPage();
         landingPage.searchItem(shortname);
         Thread.sleep(3000);
+        //masum
         testContextSetup.landingPageProductName = landingPage.getProductName().split("-")[0].trim();
         System.out.println(landingPageProductName + " is extracted from the Home page");
     }
