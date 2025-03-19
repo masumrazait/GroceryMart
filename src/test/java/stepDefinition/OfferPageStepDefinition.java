@@ -17,10 +17,11 @@ public class OfferPageStepDefinition {
     }
 
     @Then("^user searched for (.+) shortname in offers page$")
-    public void user_searched_for_same_shortname_in_offers_page(String shortname) {
+    public void user_searched_for_same_shortname_in_offers_page(String shortname) throws InterruptedException {
         switchToOffersPage();
         OffersPage offersPage = testContextSetup.pageObjectManager.OffersPage();
         offersPage.searchItem(shortname);
+        Thread.sleep(3000);
         offerPageProductName = offersPage.getProductName();
         System.out.println(offerPageProductName + " is extracted from the Offers page");
     }
