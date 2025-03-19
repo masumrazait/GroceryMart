@@ -16,7 +16,7 @@ public class OfferPageStepDefinition {
         this.testContextSetup = testContextSetup;
     }
 
-    @Then("user searched for {string} shortname in offers page")
+    @Then("^user searched for (.+) shortname in offers page$")
     public void user_searched_for_same_shortname_in_offers_page(String shortname) {
         switchToOffersPage();
         OffersPage offersPage = testContextSetup.pageObjectManager.OffersPage();
