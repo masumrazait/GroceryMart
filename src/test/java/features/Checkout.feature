@@ -10,3 +10,4 @@ Feature: Place the order for products
     Examples:
       | Name |
       | Tom  |
+      | Rot  |
